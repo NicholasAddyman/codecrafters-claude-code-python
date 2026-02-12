@@ -21,7 +21,8 @@ def main():
     chat = client.chat.completions.create(
         model="anthropic/claude-haiku-4.5",
         messages=[{"role": "user", "content": args.p}],
-        tools=[{"type": "function",
+        tools=[
+            {"type": "function",
                 "function": {
                     "name": "Read",
                     "description": "Read and return the contents of the file",
@@ -34,8 +35,10 @@ def main():
                             }
                         },
                         "required": ["file_path"]
-                    }
-                }}]
+                    },
+                },
+            },
+        ],
     )
 
     if not chat.choices or len(chat.choices) == 0:
