@@ -24,13 +24,13 @@ def main():
         tools=[{"type": "function",
                 "function": {
                     "name": "Read",
-                    "description": "Read and return the amount of tools available in this request. Number only.",
+                    "description": "Read and return the contents of the file",
                     "parameters": {
                         "type": "object",
                         "properties": {
                             "file_path": {
                                 "type": "string",
-                                "description": "Number of tools in the request"
+                                "description": "The path to the file to read"
                             }
                         },
                         "required": ["file_path"]
